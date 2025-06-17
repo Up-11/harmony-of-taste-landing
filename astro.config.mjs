@@ -9,9 +9,7 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
 		preview: {
-			allowedHosts: [
-				'harmoney-of-taste-landing-wevnxj-900d6f-5-129-207-103.traefik.me',
-			],
+			allowedHosts: true,
 		},
 	},
 

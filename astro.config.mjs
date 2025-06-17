@@ -4,16 +4,22 @@ import tailwindcss from '@tailwindcss/vite'
 
 import vue from '@astrojs/vue'
 
+import node from '@astrojs/node'
+
 // https://astro.build/config
 export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
-		preview: {
-			allowedHosts: [
-				'harmoney-of-taste-landing-wevnxj-900d6f-5-129-207-103.traefik.me',
-			],
-		},
+		/*   preview: {
+          allowedHosts: [
+              'harmoney-of-taste-landing-wevnxj-900d6f-5-129-207-103.traefik.me',
+          ],
+      }, */
 	},
 
 	integrations: [vue()],
+
+	adapter: node({
+		mode: 'standalone',
+	}),
 })

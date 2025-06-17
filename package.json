@@ -10,6 +10,7 @@
 		"start": "astro preview --host --port 3002"
 	},
 	"dependencies": {
+		"@astrojs/node": "^9.2.2",
 		"@astrojs/vue": "^5.1.0",
 		"@tailwindcss/vite": "^4.1.10",
 		"@vueuse/core": "^13.3.0",

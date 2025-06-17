@@ -1,22 +1,108 @@
+---
+import '../styles/global.css'
+---
+
 <!doctype html>
-<html lang="en">
+<html lang='ru'>
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='generator' content={Astro.generator} />
+		<link rel='preconnect' href='https://fonts.googleapis.com' />
+		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+		<link
+			href='https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=WDXL+Lubrifont+JP+N&display=swap'
+			rel='stylesheet'
+		/>
+		<link
+			rel='stylesheet'
+			href='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.15/fullpage.min.css'
+		/>
+		<title>Гармония вкуса - Кофейня нового поколения</title>
+
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				overflow-x: hidden;
+			}
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.glass-card {
+				background: rgba(255, 255, 255, 0.15);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				border-radius: 16px;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				padding: 3rem 4rem;
+				text-align: center;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+				max-width: 80%;
+				animation: fadeIn 1s ease-out;
+			}
+
+			.section {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+			}
+
+			.hero {
+				background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+					url('../assets/images/photo_2_2025-06-17_20-16-35.jpg');
+				background-size: cover;
+				background-position: center;
+			}
+
+			.title {
+				font-size: 4rem;
+				font-weight: 700;
+				color: white;
+				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+				margin-bottom: 1rem;
+				letter-spacing: 2px;
+				font-family: 'Playfair Display', serif;
+			}
+
+			.subtitle {
+				font-size: 1.5rem;
+				color: rgba(255, 255, 255, 0.9);
+				text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+				font-weight: 300;
+				letter-spacing: 1px;
+			}
+		</style>
 	</head>
 	<body>
 		<slot />
+
+		<script
+			src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.15/fullpage.min.js'
+		></script>
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', () => {
+				new fullpage('#fullpage', {
+					licenseKey: 'YOUR_KEY_HERE',
+					autoScrolling: true,
+					scrollHorizontally: true,
+					navigation: true,
+				})
+				const watermark = document.querySelector('.fp-watermark')
+				watermark.style.opacity = 0
+			})
+		</script>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

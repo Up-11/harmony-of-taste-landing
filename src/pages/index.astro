@@ -1,11 +1,435 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro'
+import Menu from '../components/Menu.vue'
+import RunningNumbers from '../components/RunningNumbers.vue'
+import Section from '../components/Section.astro'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-	<Welcome />
+	<!-- <Header /> -->
+	<div id='fullpage'>
+		<div class='section hero' id='home'>
+			<div
+				class='glass-card p-8 rounded-xl flex w-full flex-row items-center text-white gap-6 mx-auto shadow-lg backdrop-blur-md'
+				style='min-width: 320px;'
+			>
+				<div
+					class='flex-1 flex flex-col gap-5 text-left max-w-[50%] min-w-[280px]'
+				>
+					<h1 class='text-7xl font-bold'>Гармония вкуса</h1>
+					<p
+						class='text-base text-[rgba(255,255,255,0.85)] text-xl leading-relaxed'
+					>
+						Взгляните на кофе по-новому — окунитесь в атмосферу уюта и аромата.
+						Мы работаем для вас каждый день, чтобы подарить моменты радости и
+						вдохновения.
+					</p>
+
+					<p class='italic text-amber-300 max-w-sm text-lg'>
+						«Каждая чашка — маленькое произведение искусства, созданное с
+						любовью.»
+					</p>
+
+					<div class='w-full h-[1.5px] bg-white bg-opacity-20'></div>
+
+					<div
+						class='flex flex-col gap-3 text-[rgba(255,255,255,0.9)] text-xl max-w-sm'
+					>
+						<!-- Контакты (оставил как есть, просто уменьшил шрифты и gap) -->
+						<div class='flex items-center gap-2'>
+							<svg
+								class='w-4 h-4 text-yellow-400 flex-shrink-0'
+								fill='currentColor'
+								viewBox='0 0 24 24'
+							>
+								<path
+									d='M3 5.8C3 4.8 3.8 4 4.8 4H19.2C20.2 4 21 4.8 21 5.8V18.2C21 19.2 20.2 20 19.2 20H4.8C3.8 20 3 19.2 3 18.2V5.8ZM12 17C13.1 17 14 16.1 14 15C14 13.9 13.1 13 12 13C10.9 13 10 13.9 10 15C10 16.1 10.9 17 12 17ZM18 7H6V9H18V7Z'
+								></path>
+							</svg>
+							+7 (999) 123-45-67
+						</div>
+
+						<div class='flex items-center gap-2'>
+							<svg
+								class='w-4 h-4 text-yellow-400 flex-shrink-0'
+								fill='currentColor'
+								viewBox='0 0 24 24'
+							>
+								<path
+									d='M2 4C2 2.9 2.9 2 4 2H20C21.1 2 22 2.9 22 4V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V4ZM20 6.4L12 13 4 6.4V4L12 10.6L20 4V6.4Z'
+								></path>
+							</svg>
+							info@coffeebar.ru
+						</div>
+
+						<div class='flex items-center gap-2'>
+							<svg
+								class='w-4 h-4 text-yellow-400 flex-shrink-0'
+								fill='currentColor'
+								viewBox='0 0 24 24'
+							>
+								<path
+									d='M22 4.01C22 3.45 21.55 3 21 3H3C2.45 3 2 3.45 2 4.01V20C2 20.55 2.45 21 3 21H21C21.55 21 22 20.55 22 20V4.01ZM17.8 7.4L12.7 14.3C12.3 14.9 11.6 14.9 11.2 14.3L6.2 7.4C5.8 6.8 6.2 6 6.9 6H17.1C17.8 6 18.2 6.8 17.8 7.4Z'
+								></path>
+							</svg>
+							<a
+								href='https://t.me/yourcoffeechannel'
+								target='_blank'
+								class='hover:underline'>t.me/yourcoffeechannel</a
+							>
+						</div>
+
+						<div class='flex items-center gap-2'>
+							<svg
+								class='w-4 h-4 text-yellow-400 flex-shrink-0'
+								fill='currentColor'
+								viewBox='0 0 24 24'
+							>
+								<path
+									d='M12 2C8.13 2 5 5.13 5 9c0 3.38 2.68 6.15 6 6.38V21h2v-5.62c3.32-.23 6-3 6-6.38 0-3.87-3.13-7-7-7zm0 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8z'
+								></path>
+							</svg>
+							<span>Работаем ежедневно с 08:00 до 20:00</span>
+						</div>
+					</div>
+				</div>
+
+				<div class='flex-1 flex justify-center min-w-[200px]'>
+					<img
+						src='/images/photo_9_2025-06-17_20-16-35.jpg'
+						alt='Кофейная чашка'
+						class='rounded-xl shadow-lg w-100 object-cover'
+					/>
+				</div>
+			</div>
+		</div>
+
+		<div class='section hero-2'>
+			<div class='w-screen h-screen p-5'>
+				<div class='glass-card h-full w-full rounded-lg'>
+					<Menu client:load />
+				</div>
+			</div>
+		</div>
+		<div class='section hero-3'>
+			<div class='w-screen h-screen'>
+				<div
+					class='w-screen h-screen flex flex-col gap-5 items-center justify-center'
+				>
+					<h1 class='text-white text-4xl'>Наша команда</h1>
+					<div
+						class='grid grid-cols-2 gap-8 items-center text-white max-w-4xl w-full'
+					>
+						<div
+							class='glass-card p-6 flex flex-col items-center rounded-lg text-center'
+						>
+							<img
+								src='/images/photo_2025-06-17_23-58-01.jpg'
+								alt='Person 1'
+								class='w-32 h-32 object-cover rounded-full mb-4'
+							/>
+							<h3 class='text-2xl font-semibold mb-2'>Данила Гаврилов</h3>
+							<p class='text-sm text-[rgba(255,255,255,0.7)]'>
+								Основатель, любит кофе и хорошие идеи.
+							</p>
+						</div>
+
+						<div
+							class='glass-card p-6 flex flex-col items-center text-center rounded-lg'
+						>
+							<img
+								src='/images/photo_8_2025-06-17_20-16-35.jpg'
+								alt='Person 2'
+								class='w-32 h-32 object-cover rounded-full mb-4'
+							/>
+							<h3 class='text-2xl font-semibold mb-2'>Мария Смирнова</h3>
+							<p class='text-sm text-[rgba(255,255,255,0.7)]'>
+								Бариста с 5-летним стажем, эксперт по латте-арту.
+							</p>
+						</div>
+					</div>
+					<RunningNumbers client:visible />
+				</div>
+			</div>
+		</div>
+
+		<div class='section hero-4 p-5 text-white'>
+			<div
+				class='glass-card rounded-lg p-4 flex gap-6 justify-between items-center'
+			>
+				<div class='flex flex-col gap-4 w-full md:w-1/2'>
+					<div id='map' class='rounded-md h-64 w-full bg-gray-800'></div>
+					<a
+						href='#'
+						id='routeButton'
+						class='inline-block text-white border border-white rounded px-4 py-2 text-center hover:bg-white hover:text-black transition'
+					>
+						Построить маршрут
+					</a>
+				</div>
+
+				<div class='flex flex-col gap-4 w-full md:w-1/2'>
+					<h3 class='text-2xl font-semibold'>Отзывы наших гостей</h3>
+
+					<div class='bg-opacity-10 p-4 rounded flex gap-4'>
+						<div
+							class='w-12 h-12 rounded-full flex justify-center items-center bg-black/80'
+						>
+							Д
+						</div>
+						<div class='flex-1'>
+							<div class='flex items-center justify-between mb-1'>
+								<div class='font-semibold text-white'>Данила Г.</div>
+								<div class='text-xs text-[rgba(255,255,255,0.6)]'>
+									12.06.2025
+								</div>
+							</div>
+							<div class='flex items-center mb-2'>
+								<span class='text-yellow-400 text-lg'>★★★★★</span>
+							</div>
+							<p class='text-sm text-[rgba(255,255,255,0.9)] mb-2'>
+								Отличный кофе и очень вкусные десерты
+							</p>
+							<div class='text-xs text-[rgba(255,255,255,0.6)]'>
+								Источник: <a
+									href='https://yandex.ru/maps/org/garmoniya_vkusa/40206912976/reviews/?ll=92.888827%2C56.054694&z=16'
+									>Яндекс.Карты</a
+								>
+							</div>
+						</div>
+					</div>
+
+					<div class='bg-opacity-10 p-4 rounded flex gap-4'>
+						<div
+							class='w-12 h-12 rounded-full flex justify-center items-center bg-black/80'
+						>
+							E
+						</div>
+						<div class='flex-1'>
+							<div class='flex items-center justify-between mb-1'>
+								<div class='font-semibold text-white'>Евгения O.</div>
+								<div class='text-xs text-[rgba(255,255,255,0.6)]'>
+									10.06.2025
+								</div>
+							</div>
+							<div class='flex items-center mb-2'>
+								<span class='text-yellow-400 text-lg'>★★★★☆</span>
+							</div>
+							<p class='text-sm text-[rgba(255,255,255,0.9)] mb-2'>
+								Не первый раз заказываю здесь торт! Очень вкусно и красиво! Всем
+								рекомендую!👍🏻👍🏻👍🏻 Кофе тоже здесь всегда вкусный!
+							</p>
+							<div class='text-xs text-[rgba(255,255,255,0.6)]'>
+								Источник: <a
+									href='https://2gis.ru/krasnoyarsk/firm/70000001089549919/tab/reviews?m=92.889704%2C56.054302%2F16'
+									>2GIS</a
+								>
+							</div>
+						</div>
+					</div>
+
+					<div class='bg-opacity-10 p-4 rounded flex gap-4'>
+						<div
+							class='w-12 h-12 rounded-full flex justify-center items-center bg-black/80'
+						>
+							P
+						</div>
+						<div class='flex-1'>
+							<div class='flex items-center justify-between mb-1'>
+								<div class='font-semibold text-white'>Рабочий диск</div>
+								<div class='text-xs text-[rgba(255,255,255,0.6)]'>
+									07.06.2025
+								</div>
+							</div>
+							<div class='flex items-center mb-2'>
+								<span class='text-yellow-400 text-lg'>★★★★★</span>
+							</div>
+							<p class='text-sm text-[rgba(255,255,255,0.9)] mb-2'>
+								Недавно заказывали Бенто-тортик для ребенка,ребята порадовали
+								оперативностью, все четко сработали, начинка и сам торт
+								порадовал, свежий, дизайн учли! 👍 И цена порадовала. Спасибо
+								вам огромное.
+							</p>
+							<div class='text-xs text-[rgba(255,255,255,0.6)]'>
+								Источник: <a
+									href='https://2gis.ru/krasnoyarsk/firm/70000001089549919/tab/reviews?m=92.889704%2C56.054302%2F16'
+									>2GIS</a
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class='section hero-5'>
+			<div
+				class='glass-card rounded-2xl p-10 flex flex-col md:flex-row gap-12 justify-between items-start text-white max-w-7xl mx-auto'
+			>
+				<!-- Форма обратной связи -->
+				<div class='flex-1 w-full md:w-1/2'>
+					<h3 class='text-4xl font-bold mb-6'>Свяжитесь с нами</h3>
+					<form class='flex flex-col gap-6'>
+						<input
+							type='text'
+							placeholder='Ваше имя'
+							class='bg-black/40 bg-opacity-10 p-4 rounded-lg outline-none placeholder-opacity-60 text-lg border border-white border-opacity-20 focus:border-yellow-400 transition'
+						/>
+
+						<input
+							type='tel'
+							placeholder='Телефон'
+							class='bg-black/40 bg-opacity-10 p-4 rounded-lg outline-none placeholder-opacity-60 text-lg border border-white border-opacity-20 focus:border-yellow-400 transition'
+						/>
+
+						<textarea
+							rows='4'
+							placeholder='Сообщение'
+							class='bg-black/40 bg-opacity-10 p-4 rounded-lg outline-none placeholder-opacity-60 text-lg resize-none border border-white border-opacity-20 focus:border-yellow-400 transition'
+						></textarea>
+
+						<button
+							type='submit'
+							class='bg-amber-400 text-black font-bold text-lg py-4 rounded-lg hover:bg-amber-500 transition w-full'
+						>
+							Отправить сообщение
+						</button>
+					</form>
+				</div>
+
+				<!-- Информация о поставщике -->
+				<div class='flex-1 w-full md:w-1/2 flex flex-col gap-6'>
+					<h3 class='text-4xl font-bold'>Поставщик наших кофейных зерен</h3>
+					<p class='text-lg text-[rgba(255,255,255,0.94)] leading-relaxed'>
+						Мы с гордостью используем зерна от <strong>Golana</strong> — официального
+						поставщика отборного премиум кофе, который отличается насыщенным вкусом
+						и стабильным качеством.
+					</p>
+					<div class='flex flex-col gap-3'>
+						<p class='text-[rgba(255,255,255,0.75)] text-base'>
+							Закажите поставку или ознакомьтесь с ассортиментом по ссылке ниже:
+						</p>
+						<a
+							href='https://up-11.github.io/LandingGolana/'
+							target='_blank'
+							class='text-yellow-400 text-2xl font-medium hover:underline'
+						>
+							👉 golana.ru
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </Layout>
+<script>
+	if (typeof window !== 'undefined') {
+		const endPoint = [56.054693, 92.888828]
+
+		function load2GIS(callback) {
+			const script = document.createElement('script')
+			script.src = 'https://maps.api.2gis.ru/2.0/loader.js?pkg=full'
+			script.onload = callback
+			document.head.appendChild(script)
+		}
+
+		load2GIS(() => {
+			DG.then(function () {
+				const map = DG.map('map', {
+					center: endPoint,
+					zoom: 13,
+				})
+
+				DG.marker(endPoint)
+					.addTo(map)
+					.bindPopup('ул. Петра Подзолкова 10 || Гармония вкуса')
+			})
+		})
+
+		document.addEventListener('DOMContentLoaded', () => {
+			const btn = document.getElementById('routeButton')
+			if (btn) {
+				btn.addEventListener('click', event => {
+					event.preventDefault()
+					const url = `https://2gis.ru/krasnoyarsk/search/Гармония%20вкуса%20кофе%20и%20десерты/firm/70000001089549919/92.889704%2C56.054458?m=92.831925%2C56.005415%2F11`
+					window.location.href = url
+				})
+			}
+		})
+	}
+</script>
+
+<style>
+	#map {
+		height: 300px;
+	}
+	.hero {
+		background: linear-gradient(rgba(0, 0, 0, 0.267), rgba(0, 0, 0, 0.589)),
+			url('../assets/images/photo_2_2025-06-17_20-16-35.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.hero-2 {
+		background: linear-gradient(rgba(0, 0, 0, 0.267), rgba(0, 0, 0, 0.589)),
+			url('../assets/images/photo_3_2025-06-17_20-16-35.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.hero-3 {
+		background: linear-gradient(rgba(0, 0, 0, 0.267), rgba(0, 0, 0, 0.589)),
+			url('../assets/images/photo_10_2025-06-17_20-16-35.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.hero-4 {
+		background: linear-gradient(rgba(0, 0, 0, 0.267), rgba(0, 0, 0, 0.589)),
+			url('../assets/images/photo_9_2025-06-17_20-16-35.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.hero-5 {
+		background: linear-gradient(rgba(0, 0, 0, 0.267), rgba(0, 0, 0, 0.589)),
+			url('../assets/images/photo_6_2025-06-17_20-16-35.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.title {
+		font-size: 4rem;
+		font-weight: 700;
+		color: white;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+		margin-bottom: 1rem;
+		letter-spacing: 2px;
+		font-family: 'Playfair Display', serif;
+	}
+
+	.subtitle {
+		font-size: 1.5rem;
+		color: rgba(255, 255, 255, 0.9);
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+		font-weight: 300;
+		letter-spacing: 1px;
+	}
+
+	@media (max-width: 768px) {
+		.glass-card {
+			padding: 2rem;
+			max-width: 90%;
+		}
+
+		.title {
+			font-size: 2.5rem;
+		}
+
+		.subtitle {
+			font-size: 1.2rem;
+		}
+	}
+</style>

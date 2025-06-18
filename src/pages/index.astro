@@ -1,25 +1,26 @@
 ---
-import Header from '../components/Header.astro'
+import Header from '../components/Header.vue'
 import Menu from '../components/Menu.vue'
+import News from '../components/News.astro'
 import RunningNumbers from '../components/RunningNumbers.vue'
 import Section from '../components/Section.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-	<!-- <Header /> -->
+	<Header client:load />
 	<div id='fullpage'>
-		<div class='section hero' id='home'>
+		<div class='section hero' data-anchor='home'>
 			<div
-				class='glass-card p-8 rounded-xl flex w-full flex-row items-center text-white gap-6 mx-auto shadow-lg backdrop-blur-md'
+				class='glass-card p-6 md:p-8 rounded-xl flex flex-col md:flex-row w-full items-center text-white gap-6 mx-auto shadow-lg backdrop-blur-md'
 				style='min-width: 320px;'
 			>
 				<div
-					class='flex-1 flex flex-col gap-5 text-left max-w-[50%] min-w-[280px]'
+					class='flex-1 max-md:pt-10 flex flex-col gap-5 text-left w-full md:max-w-[50%] min-w-[280px]'
 				>
-					<h1 class='text-7xl font-bold'>Гармония вкуса</h1>
+					<h1 class='text-4xl md:text-7xl font-bold'>Гармония вкуса</h1>
 					<p
-						class='text-base text-[rgba(255,255,255,0.85)] text-xl leading-relaxed'
+						class='text-base md:text-xl text-[rgba(255,255,255,0.85)] leading-relaxed'
 					>
 						Взгляните на кофе по-новому — окунитесь в атмосферу уюта и аромата.
 						Мы работаем для вас каждый день, чтобы подарить моменты радости и
@@ -34,12 +35,12 @@ import Layout from '../layouts/Layout.astro'
 					<div class='w-full h-[1.5px] bg-white bg-opacity-20'></div>
 
 					<div
-						class='flex flex-col gap-3 text-[rgba(255,255,255,0.9)] text-xl max-w-sm'
+						class='flex flex-col gap-3 text-[rgba(255,255,255,0.9)] text-lg md:text-xl max-w-sm'
 					>
-						<!-- Контакты (оставил как есть, просто уменьшил шрифты и gap) -->
+						<!-- Контакты -->
 						<div class='flex items-center gap-2'>
 							<svg
-								class='w-4 h-4 text-yellow-400 flex-shrink-0'
+								class='w-5 h-5 text-yellow-400 flex-shrink-0'
 								fill='currentColor'
 								viewBox='0 0 24 24'
 							>
@@ -47,12 +48,12 @@ import Layout from '../layouts/Layout.astro'
 									d='M3 5.8C3 4.8 3.8 4 4.8 4H19.2C20.2 4 21 4.8 21 5.8V18.2C21 19.2 20.2 20 19.2 20H4.8C3.8 20 3 19.2 3 18.2V5.8ZM12 17C13.1 17 14 16.1 14 15C14 13.9 13.1 13 12 13C10.9 13 10 13.9 10 15C10 16.1 10.9 17 12 17ZM18 7H6V9H18V7Z'
 								></path>
 							</svg>
-							+7 (999) 123-45-67
+							+7 (913) 561-85-05
 						</div>
 
 						<div class='flex items-center gap-2'>
 							<svg
-								class='w-4 h-4 text-yellow-400 flex-shrink-0'
+								class='w-5 h-5 text-yellow-400 flex-shrink-0'
 								fill='currentColor'
 								viewBox='0 0 24 24'
 							>
@@ -60,12 +61,12 @@ import Layout from '../layouts/Layout.astro'
 									d='M2 4C2 2.9 2.9 2 4 2H20C21.1 2 22 2.9 22 4V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V4ZM20 6.4L12 13 4 6.4V4L12 10.6L20 4V6.4Z'
 								></path>
 							</svg>
-							info@coffeebar.ru
+							garmoniyavkusa
 						</div>
 
 						<div class='flex items-center gap-2'>
 							<svg
-								class='w-4 h-4 text-yellow-400 flex-shrink-0'
+								class='w-5 h-5 text-yellow-400 flex-shrink-0'
 								fill='currentColor'
 								viewBox='0 0 24 24'
 							>
@@ -74,15 +75,28 @@ import Layout from '../layouts/Layout.astro'
 								></path>
 							</svg>
 							<a
-								href='https://t.me/yourcoffeechannel'
+								href='https://t.me/Garmonia_vkusaa'
 								target='_blank'
-								class='hover:underline'>t.me/yourcoffeechannel</a
+								class='hover:underline'>Гармония вкуса в Телеграмм</a
 							>
 						</div>
 
 						<div class='flex items-center gap-2'>
 							<svg
-								class='w-4 h-4 text-yellow-400 flex-shrink-0'
+								class='w-5 h-5 text-yellow-400 flex-shrink-0'
+								fill='currentColor'
+								viewBox='0 0 24 24'
+							>
+								<path
+									d='M12 1.75A10.25 10.25 0 1 0 22.25 12 10.263 10.263 0 0 0 12 1.75zm0 18.5A8.25 8.25 0 1 1 20.25 12 8.26 8.26 0 0 1 12 20.25zm.75-13a.75.75 0 0 0-1.5 0v5a.75.75 0 0 0 .33.62l3.5 2.25a.75.75 0 0 0 .79-1.28l-3.12-2V7.25z'
+								></path>
+							</svg>
+							<span>Работаем ежедневно с 08:00 до 20:00</span>
+						</div>
+
+						<div class='flex items-center gap-2'>
+							<svg
+								class='w-5 h-5 text-yellow-400 flex-shrink-0'
 								fill='currentColor'
 								viewBox='0 0 24 24'
 							>
@@ -90,73 +104,77 @@ import Layout from '../layouts/Layout.astro'
 									d='M12 2C8.13 2 5 5.13 5 9c0 3.38 2.68 6.15 6 6.38V21h2v-5.62c3.32-.23 6-3 6-6.38 0-3.87-3.13-7-7-7zm0 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8z'
 								></path>
 							</svg>
-							<span>Работаем ежедневно с 08:00 до 20:00</span>
+							<span>Красноярск, ул. Петра Подзолкова 10</span>
 						</div>
 					</div>
 				</div>
 
-				<div class='flex-1 flex justify-center min-w-[200px]'>
+				<div class='flex-1 flex justify-center w-full md:min-w-[200px]'>
 					<img
 						src='/images/photo_9_2025-06-17_20-16-35.jpg'
 						alt='Кофейная чашка'
-						class='rounded-xl shadow-lg w-100 object-cover'
+						class='rounded-xl shadow-lg w-full max-w-[400px] object-cover'
 					/>
 				</div>
 			</div>
 		</div>
 
-		<div class='section hero-2'>
-			<div class='w-screen h-screen p-5'>
-				<div class='glass-card backdrop-blur-md h-full w-full rounded-lg'>
+		<div class='section hero-2' data-anchor='menu'>
+			<div class='w-screen h-fit md:h-screen p-5'>
+				<div class='glass-card backdrop-blur-md h-fit w-full rounded-lg'>
 					<Menu client:load />
 				</div>
 			</div>
 		</div>
-		<div class='section hero-3'>
-			<div class='w-screen h-screen'>
-				<div
-					class='w-screen h-screen flex flex-col gap-5 items-center justify-center'
-				>
-					<h1 class='text-white text-4xl'>Наша команда</h1>
-					<div
-						class='grid grid-cols-2 gap-8 items-center text-white max-w-4xl w-full'
-					>
-						<div
-							class='glass-card backdrop-blur-md p-6 flex flex-col items-center rounded-lg text-center'
-						>
-							<img
-								src='/images/photo_2025-06-17_23-58-01.jpg'
-								alt='Person 1'
-								class='w-32 h-32 object-cover rounded-full mb-4'
-							/>
-							<h3 class='text-2xl font-semibold mb-2'>Данила Гаврилов</h3>
-							<p class='text-sm text-[rgba(255,255,255,0.7)]'>
-								Основатель, любит кофе и хорошие идеи.
-							</p>
-						</div>
+		<div class='section hero-3' data-anchor='about'>
+			<div
+				class='w-screen min-h-screen flex flex-col gap-5 items-center justify-center px-4 py-8'
+			>
+				<h1 class='text-white text-3xl md:text-4xl'>Наша команда</h1>
 
-						<div
-							class='glass-card p-6 flex flex-col items-center text-center rounded-lg'
-						>
-							<img
-								src='/images/photo_8_2025-06-17_20-16-35.jpg'
-								alt='Person 2'
-								class='w-32 h-32 object-cover rounded-full mb-4'
-							/>
-							<h3 class='text-2xl font-semibold mb-2'>Мария Смирнова</h3>
-							<p class='text-sm text-[rgba(255,255,255,0.7)]'>
-								Бариста с 5-летним стажем, эксперт по латте-арту.
-							</p>
-						</div>
+				<div
+					class='grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 items-center text-white max-w-4xl w-full'
+				>
+					<div
+						class='glass-card backdrop-blur-md p-5 md:p-6 flex flex-col items-center text-center rounded-lg'
+					>
+						<img
+							src='/images/photo_2025-06-17_23-58-01.jpg'
+							alt='Person 1'
+							class='w-28 h-28 md:w-32 md:h-32 object-cover rounded-full mb-3 md:mb-4'
+						/>
+						<h3 class='text-xl md:text-2xl font-semibold mb-2'>
+							Данила Гаврилов
+						</h3>
+						<p class='text-sm text-[rgba(255,255,255,0.7)]'>
+							Основатель, любит кофе и хорошие идеи.
+						</p>
 					</div>
-					<RunningNumbers client:visible />
+
+					<div
+						class='glass-card p-5 md:p-6 flex flex-col items-center text-center rounded-lg'
+					>
+						<img
+							src='/images/photo_8_2025-06-17_20-16-35.jpg'
+							alt='Person 2'
+							class='w-28 h-28 md:w-32 md:h-32 object-cover rounded-full mb-3 md:mb-4'
+						/>
+						<h3 class='text-xl md:text-2xl font-semibold mb-2'>
+							Мария Смирнова
+						</h3>
+						<p class='text-sm text-[rgba(255,255,255,0.7)]'>
+							Бариста с 5-летним стажем, эксперт по латте-арту.
+						</p>
+					</div>
 				</div>
+
+				<RunningNumbers client:visible />
 			</div>
 		</div>
 
-		<div class='section hero-4 p-5 text-white'>
+		<div class='section hero-4 p-5 text-white' data-anchor='contacts'>
 			<div
-				class='glass-card backdrop-blur-md rounded-lg p-4 flex gap-6 justify-between items-center'
+				class='glass-card backdrop-blur-md rounded-lg p-4 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center'
 			>
 				<div class='flex flex-col gap-4 w-full md:w-1/2'>
 					<div id='map' class='rounded-md h-64 w-full bg-gray-800'></div>
@@ -192,7 +210,8 @@ import Layout from '../layouts/Layout.astro'
 								Отличный кофе и очень вкусные десерты
 							</p>
 							<div class='text-xs text-[rgba(255,255,255,0.6)]'>
-								Источник: <a
+								Источник:
+								<a
 									href='https://yandex.ru/maps/org/garmoniya_vkusa/40206912976/reviews/?ll=92.888827%2C56.054694&z=16'
 									>Яндекс.Карты</a
 								>
@@ -221,7 +240,8 @@ import Layout from '../layouts/Layout.astro'
 								рекомендую!👍🏻👍🏻👍🏻 Кофе тоже здесь всегда вкусный!
 							</p>
 							<div class='text-xs text-[rgba(255,255,255,0.6)]'>
-								Источник: <a
+								Источник:
+								<a
 									href='https://2gis.ru/krasnoyarsk/firm/70000001089549919/tab/reviews?m=92.889704%2C56.054302%2F16'
 									>2GIS</a
 								>
@@ -252,7 +272,8 @@ import Layout from '../layouts/Layout.astro'
 								вам огромное.
 							</p>
 							<div class='text-xs text-[rgba(255,255,255,0.6)]'>
-								Источник: <a
+								Источник:
+								<a
 									href='https://2gis.ru/krasnoyarsk/firm/70000001089549919/tab/reviews?m=92.889704%2C56.054302%2F16'
 									>2GIS</a
 								>
@@ -262,12 +283,14 @@ import Layout from '../layouts/Layout.astro'
 				</div>
 			</div>
 		</div>
+		<div class='section hero-6' data-anchor='news'>
+			<News />
+		</div>
 
-		<div class='section hero-5'>
+		<div class='section hero-5' data-anchor='suppliers'>
 			<div
 				class='glass-card backdrop-blur-md rounded-2xl p-10 flex flex-col md:flex-row gap-12 justify-between items-start text-white max-w-7xl mx-auto'
 			>
-				<!-- Форма обратной связи -->
 				<div class='flex-1 w-full md:w-1/2'>
 					<h3 class='text-4xl font-bold mb-6'>Свяжитесь с нами</h3>
 					<form class='flex flex-col gap-6'>
@@ -376,6 +399,7 @@ import Layout from '../layouts/Layout.astro'
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
+		height: fit-content !important;
 	}
 	.hero-3 {
 		background: linear-gradient(rgba(0, 0, 0, 0.267), rgba(0, 0, 0, 0.589)),
@@ -398,6 +422,16 @@ import Layout from '../layouts/Layout.astro'
 		background-size: cover;
 		background-position: center;
 	}
+	.hero-6 {
+		background: linear-gradient(rgba(0, 0, 0, 0.267), rgba(0, 0, 0, 0.589)),
+			url('../assets/images/photo_5_2025-06-17_20-16-35.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.section {
+		min-height: 100dvh;
+	}
 
 	.title {
 		font-size: 4rem;
@@ -418,11 +452,6 @@ import Layout from '../layouts/Layout.astro'
 	}
 
 	@media (max-width: 768px) {
-		.glass-card {
-			padding: 2rem;
-			max-width: 90%;
-		}
-
 		.title {
 			font-size: 2.5rem;
 		}

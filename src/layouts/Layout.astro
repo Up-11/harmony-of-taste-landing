@@ -99,10 +99,24 @@ import '../styles/global.css'
 					autoScrolling: true,
 					scrollHorizontally: true,
 					navigation: true,
+					anchors: ['home', 'menu', 'about', 'contacts', 'news', 'suppliers'],
 				})
 				const watermark = document.querySelector('.fp-watermark')
 				watermark.style.opacity = 0
 			})
+			const div = document.getElementById('fullpage')
+
+			function checkMobile() {
+				if (window.innerWidth < 768) {
+					div.id = 'ullpage'
+				} else {
+					div.id = 'fullpage'
+				}
+			}
+
+			checkMobile()
+
+			window.addEventListener('resize', checkMobile)
 		</script>
 	</body>
 </html>

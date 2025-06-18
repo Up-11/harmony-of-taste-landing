@@ -18,5 +18,8 @@
 		"fullpage.js": "^4.0.36",
 		"tailwindcss": "^4.1.10",
 		"vue": "^3.5.16"
+	},
+	"devDependencies": {
+		"daisyui": "^5.0.43"
 	}
 }

@@ -1,0 +1,218 @@
+<section class='p-6'>
+	<h2 class='text-white text-4xl mb-6'>Новости и акции</h2>
+
+	<div class='grid grid-cols-1 md:grid-cols-3 gap-6'>
+		<div
+			class='glass-card p-4 flex flex-col justify-between rounded-lg backdrop-blur-2xl'
+		>
+			<div>
+				<h3 class='text-xl font-semibold text-white mb-2'>
+					🔥 Открытие новой кофейни на Арбате!
+				</h3>
+				<p class='text-white/80 mb-4'>
+					Приходите в нашу новую уютную кофейню на Арбате. Угощаем комплиментами
+					каждому гостю!
+				</p>
+			</div>
+			<button
+				onclick="document.getElementById('news_modal_1').showModal()"
+				class='btn mt-auto'>Подробнее</button
+			>
+		</div>
+
+		<div
+			class='glass-card p-4 flex flex-col justify-between rounded-lg backdrop-blur-2xl'
+		>
+			<div>
+				<h3 class='text-xl font-semibold text-white mb-2'>
+					🎁 Второй кофе в подарок!
+				</h3>
+				<p class='text-white/80 mb-4'>
+					До 30 июня действует акция: закажите любой кофе — второй такой же
+					получите бесплатно!
+				</p>
+			</div>
+			<button
+				onclick="document.getElementById('news_modal_2').showModal()"
+				class='btn mt-auto'>Подробнее</button
+			>
+		</div>
+
+		<div
+			class='glass-card p-4 flex flex-col justify-between rounded-lg backdrop-blur-2xl'
+		>
+			<div>
+				<h3 class='text-xl font-semibold text-white mb-2'>
+					🍰 Новый десерт: малиновый чизкейк
+				</h3>
+				<p class='text-white/80 mb-4'>
+					Попробуйте наш новый чизкейк с нежным сырным кремом и свежими ягодами
+					малины!
+				</p>
+			</div>
+			<button
+				onclick="document.getElementById('news_modal_3').showModal()"
+				class='btn mt-auto'>Подробнее</button
+			>
+		</div>
+
+		<div
+			class='glass-card p-4 flex flex-col justify-between rounded-lg backdrop-blur-2xl'
+		>
+			<div>
+				<h3 class='text-xl font-semibold text-white mb-2'>
+					☕ Новое меню напитков
+				</h3>
+				<p class='text-white/80 mb-4'>
+					Добавили авторские лимонады и летние холодные напитки. Обязательно
+					попробуйте!
+				</p>
+			</div>
+			<button
+				onclick="document.getElementById('news_modal_4').showModal()"
+				class='btn mt-auto'>Подробнее</button
+			>
+		</div>
+
+		<div
+			class='glass-card p-4 flex flex-col justify-between rounded-lg backdrop-blur-2xl'
+		>
+			<div>
+				<h3 class='text-xl font-semibold text-white mb-2'>
+					📸 Фото-день в кофейне
+				</h3>
+				<p class='text-white/80 mb-4'>
+					24 июня у нас бесплатная фотосессия для гостей с напитками и
+					десертами.
+				</p>
+			</div>
+			<button
+				onclick="document.getElementById('news_modal_5').showModal()"
+				class='btn mt-auto'>Подробнее</button
+			>
+		</div>
+
+		<div
+			class='glass-card p-4 flex flex-col justify-between rounded-lg backdrop-blur-2xl'
+		>
+			<div>
+				<h3 class='text-xl font-semibold text-white mb-2'>
+					🎉 Праздник на открытом воздухе
+				</h3>
+				<p class='text-white/80 mb-4'>
+					1 июля — большой праздник с музыкой, кофе и угощениями в нашем
+					дворике.
+				</p>
+			</div>
+			<button
+				onclick="document.getElementById('news_modal_6').showModal()"
+				class='btn mt-auto'>Подробнее</button
+			>
+		</div>
+	</div>
+</section>
+
+<dialog id='news_modal_1' class='modal'>
+	<div class='modal-box'>
+		<h3 class='text-lg font-bold'>Открытие на Арбате</h3>
+		<img
+			src='/images/photo_9_2025-06-17_20-16-35.jpg'
+			alt='Coffee Shop'
+			class='rounded-xl my-4 h-35 w-full object-cover'
+		/>
+		<p class='py-2'>
+			Мы открыли новую уютную кофейню на Петра Подзолкова 10. Ждём вас с 8:00 до
+			20:00! Первым гостям — комплимент от бариста.
+		</p>
+		<div class='modal-action'>
+			<form method='dialog'>
+				<button class='btn'>Закрыть</button>
+			</form>
+		</div>
+	</div>
+</dialog>
+
+<dialog id='news_modal_2' class='modal'>
+	<div class='modal-box'>
+		<h3 class='text-lg font-bold'>Акция «Второй кофе в подарок»</h3>
+		<p class='py-4'>
+			С 17 по 30 июня при покупке любого напитка получите второй такой же
+			бесплатно. Отличный повод порадовать друга!
+		</p>
+		<div class='modal-action'>
+			<form method='dialog'>
+				<button class='btn'>Закрыть</button>
+			</form>
+		</div>
+	</div>
+</dialog>
+
+<dialog id='news_modal_3' class='modal'>
+	<div class='modal-box'>
+		<h3 class='text-lg font-bold'>Новый десерт</h3>
+		<img
+			src='/images/photo_2025-06-17_20-16-16.jpg'
+			alt='Cheesecake'
+			class='rounded-xl my-4 h-35 w-full object-cover'
+		/>
+		<p class='py-2'>
+			Теперь в нашем меню — малиновый чизкейк с нежным сырным кремом и свежими
+			ягодами. Отличный выбор к утреннему капучино!
+		</p>
+		<div class='modal-action'>
+			<form method='dialog'>
+				<button class='btn'>Закрыть</button>
+			</form>
+		</div>
+	</div>
+</dialog>
+
+<dialog id='news_modal_4' class='modal'>
+	<div class='modal-box'>
+		<h3 class='text-lg font-bold'>Новое меню напитков</h3>
+		<p class='py-4'>
+			Добавили авторские лимонады и летние холодные напитки. Освежитесь в жаркий
+			день!
+		</p>
+		<div class='modal-action'>
+			<form method='dialog'>
+				<button class='btn'>Закрыть</button>
+			</form>
+		</div>
+	</div>
+</dialog>
+
+<dialog id='news_modal_5' class='modal'>
+	<div class='modal-box'>
+		<h3 class='text-lg font-bold'>Фото-день в кофейне</h3>
+		<img
+			src='/images/photo_6_2025-06-17_20-16-35.jpg'
+			alt='Photo day'
+			class='rounded-xl my-4 h-35 w-full object-cover'
+		/>
+		<p class='py-2'>
+			24 июня приглашаем на бесплатную фотосессию для гостей с напитками и
+			десертами. Фото от профессионального фотографа!
+		</p>
+		<div class='modal-action'>
+			<form method='dialog'>
+				<button class='btn'>Закрыть</button>
+			</form>
+		</div>
+	</div>
+</dialog>
+
+<dialog id='news_modal_6' class='modal'>
+	<div class='modal-box'>
+		<h3 class='text-lg font-bold'>Праздник на открытом воздухе</h3>
+		<p class='py-4'>
+			1 июля устраиваем большой праздник на открытом воздухе с музыкой,
+			бесплатным кофе и десертами. Приходите с друзьями!
+		</p>
+		<div class='modal-action'>
+			<form method='dialog'>
+				<button class='btn'>Закрыть</button>
+			</form>
+		</div>
+	</div>
+</dialog>
